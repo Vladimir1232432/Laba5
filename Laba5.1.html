@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Ревин</title>
+</head>
+<body>
+
+    <script>
+        var text1 = Array.from(String("АБри*коС шуткА мотоБлок БритвА АнтохА Св/иСток"));
+        var C = 0;
+        var ZV = 0, PL = 0;
+
+        document.write(text1.join(""));
+        document.write("<br>");
+        document.write("Длинна строки: ", text1.length);
+        document.write("<br>");
+
+
+        for (var i = 0; i < text1.length; i++) {
+
+            if (text1[i] == "А" || text1[i] == "Б") {
+                text1.splice(i + 1, 0, ";");
+                i++;
+            }
+        }
+
+        document.write(text1.join(""));
+        document.write("<br>");
+        document.write("Длинна новой строки: ", text1.length);
+        document.write("<br>");
+
+        for (var i = 0; i < text1.length; i++) {
+            if (text1[i] == "*") {
+                ZV = text1.indexOf(text1[i]);
+            }
+
+        }
+
+        document.write("Индек символа *: ", ZV);
+        document.write("<br>");
+
+        for (var i = 0; i < text1.length; i++) {
+            if (text1[i] == "/") {
+                PL = text1.indexOf(text1[i]);
+            }
+
+        }
+
+        document.write("Индек символа /: ", PL);
+        document.write("<br>");
+
+        for (var i = 0; i < text1.length; i++) {
+
+            if (i >= ZV && i <= PL) {
+                
+                    if (text1[i] == "С") {
+                        C++;
+                    }
+            }
+        }
+        document.write("Количество букв С: ", C);
+    </script>
+</body>
+</html>
