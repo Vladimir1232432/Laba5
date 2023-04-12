@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Ревин</title>
+</head>
+<body>
+
+    <script>
+        var TEXT = "Абрикос И Шутка Мотоблок Не Бритва Антоха По Кличке Свисток ПИ ВО";
+        var text1 = Array.from(String(TEXT));
+        var text2 = TEXT.split(" ");
+        var C = 0;
+        var ZV = 3;
+        var VZ = 0;
+
+        document.write(text1.join(""));
+        document.write("<br>");
+        document.write("Длинна строки: ", text1.length);
+        document.write("<br>");
+        for (var i = 0; i < text2.length; i += 1) {
+
+            if (text2[i].length < ZV) {
+                VZ++;
+            }
+        }
+        for (var i = 0; i < text1.length; i++) {
+
+            if (text1[i] == " ") {
+                C = text1.indexOf(text1[i]);
+                continue;
+            }
+        }
+        for (var i = 0; i < text1.length; i++) {
+
+            if (text1[i] == " " && i > C) {
+                text1.splice(i, 1);
+                i++;
+            }
+        }
+        document.write("Длинна новой строки: ", text1.length);
+        document.write("<br>");
+        document.write("Индекс пробела между первым словои и вторым: ", C);
+        document.write("<br>");
+        document.write(text1.join(""));
+        document.write("<br>");
+        document.write("Количкство слов меньше 3 символов: ",VZ);
+
+
+    </script>
+</body>
+</html>
