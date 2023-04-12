@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Ревин</title>
+</head>
+<body>
+
+    <script>
+        var text = "Абрикос И Шутка Мотоблок Не Бритва Антоха По Кличке Свисток ПИВО";
+        document.write("Изначальная строка: ",text);  
+        document.write("<br>");  
+
+        var mass = text.split(" "); 
+
+        for (var i = 0; i < mass.length; i++) { 
+            var word = mass[i];
+            if (word.length > 2) { 
+                var first = word.charAt(0);
+                var last = word.charAt(word.length - 1);
+                var mid = word.substring(1, word.length - 1);
+                var peremesh = mid.split("").sort(function () { return 0.5 - Math.random() }).join("");
+                mass[i] = first + peremesh + last;
+            }
+        }
+        var otvet = mass.join(" "); 
+        document.write("Измененная строка: ",otvet);  
+    </script>
+</body>
+</html>
