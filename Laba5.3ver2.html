@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Ревин</title>
+</head>
+<body>
+
+    <script>
+        document.write("Программа шифрования.");
+        document.write("<br>");
+        var ALFAVIT = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
+        var mass1 = Array.from(String(ALFAVIT));
+        var mass2 = [];
+        document.write("Алфавит 1: ", mass1.join(""));
+        document.write("<br>");
+
+        mass2 = [].concat(mass1.slice(- 1), mass1.slice(0,- 1));
+        document.write("Алфавит 2: ", mass2.join(""));
+
+    </script>
+</body>
+</html>

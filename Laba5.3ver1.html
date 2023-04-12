@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Ревин</title>
+</head>
+<body>
+
+    <script>
+        document.write("Программа шифрования.");
+        document.write("<br>");
+        var ALFAVIT = "а б в г д е ё ж з и й к л м н о п р с т у ф х ц ч ш щ ъ ы ь э ю я";
+        var mass = Array.from(String(ALFAVIT));
+        var C = 0;
+        var Z;
+        var ZNACH = prompt("Перед вами программа по шифрованию. Введите букву из представленного алфавита (а б в г д е ё ж з и й к л м н о п р с т у ф х ц ч ш щ ъ ы ь э ю я): ");
+        document.write("Алфавит: ", mass.join(""));
+        document.write("<br>");
+        for (var i = 0; i < mass.length; i++) {
+            if (ZNACH == "я") {
+                Z = mass[0];  
+            } else if (mass[i] == ZNACH) {
+                C = mass.indexOf(mass[i]);
+                Z = mass[C + 2];
+            }
+        }
+        document.write("Индекс введенной буквы: ", C);
+        document.write("<br>");
+        document.write("Вы ввели букву: ", ZNACH);
+        document.write("<br>");
+        document.write("Новая буква: ", Z);
+
+    </script>
+</body>
+</html>
